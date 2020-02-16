@@ -41,21 +41,17 @@ class ContratoPdf < Prawn::Document
     text"         'La Fundación'                                                                                                             'El Beneficiario'",:size =>10,:align => :justify 
     text"
     "
-   text" * CAT (Costo Anual Total) #{@credit.cat_sin_iva}% sin IVA.
-    * Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF)
-     Tel. (55)5340 0999 y 01 800 999 8080 www.condusef.gob.mx
-    * Registro de Contratos de Adhesión (RECA) Número: #{@credit.product.registro_del_contrado_de_adhesion}
-    ",:size =>8,:align => :justify  
+  
     start_new_page
     
     
     
    text"Copia 1",:size =>8,:align  => :right
-   text "CONTRATO DE APERTURA DE apoyo Y GARANTÍA      
+   text "CONTRATO DE APERTURA DE APOYO ECONÓMICO      
    " , :align  => :center, :style=> :bold
  
   
-      text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente contrato de credito y garantía, por una parte el(la) #{Conf.last.representante_legal}, representante legal de FINANCIERA MARJO, S.A. de C.V. SOFOM, E.N.R., con domicilio en: #{Conf.last.domicilio} de la ciudad de  CULIACÁN, SINALOA  a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el Sr(a) #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de las siguientes:
+      text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente contrato de credito y garantía, por una parte el(la) #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} de la ciudad de  CULIACÁN, SINALOA  a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el Sr(a) #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de las siguientes:
 ",:size =>10,:align => :justify 
     text "CLAUSULAS" , :align  => :center, :style=> :bold
     text "PRIMERA: 'La Fundación' ha convenido en otorgar un apoyo económico a 'El Beneficiario' y este dá en garantia un pagaré por el monto total del apoyo. ",:size =>10,:align => :justify 
@@ -78,27 +74,23 @@ class ContratoPdf < Prawn::Document
     text" A. Interes moratorios de #{'%.2f' %  @credit.product.taza_de_interes_moratoria}% por el importe de saldo insoluto vencido (mensual).",:size =>10,:align => :justify 
     text" B. Pago inmediato de la cantidad que como saldo total este adeudándole.",:size =>10,:align => :justify 
     text" C. La resición de este contrato y por consiguiente, el pago de las prestaciones legales a que haya lugar.",:size =>10,:align => :justify 
-    text" QUINTA: 'El Beneficiario' o las personas autorizadas por él, al firmar el recibo o el documento hacen constar que recibió el o los artículos descritos en su entera satisfacción.",:size =>10,:align => :justify 
+    text" QUINTA: EN ESPERA DE REDACCION",:size =>10,:align => :justify 
     text" SEXTA: Para la interpretación del presente contrato, las partes se someten a lo que determinen los tribunales competentes de la ciudad de #{@credit.ciudad_tribunal}, renunciando expresamente a la competencia que pudiera corresponder en razón de sus domicilios presentes o futuro o de cualquier índole.",:size =>10,:align => :justify 
     text" Para constancia y efectos legales, los contratantes firman el presente contrato en la ciudad de #{@credit.padre.municipio}, #{@credit.padre.estado}  el día de #{@credit.fecha_en_español}.",:size =>10,:align => :justify 
     text"  __________________________                                                                          ________________________",:size =>10,:align => :justify 
     text"         'La Fundación'                                                                                                             'El Beneficiario'",:size =>10,:align => :justify 
     text"
     "
-   text" * CAT (Costo Anual Total) #{@credit.cat_sin_iva}% sin IVA.
-    * Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF)
-     Tel. (55)5340 0999 y 01 800 999 8080 www.condusef.gob.mx
-    * Registro de Contratos de Adhesión (RECA) Número: #{@credit.product.registro_del_contrado_de_adhesion}
-    ",:size =>8,:align => :justify   
+   
   start_new_page
     
     
    text"Copia 2",:size =>8,:align  => :right
-   text "CONTRATO DE APERTURA DE apoyo Y GARANTÍA      
+   text "CONTRATO DE APERTURA DE APOYO ECONÓMICO      
    " , :align  => :center, :style=> :bold
  
   
-     text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente contrato de credito y garantía, por una parte el(la) #{Conf.last.representante_legal}, representante legal de FINANCIERA MARJO, S.A. de C.V. SOFOM, E.N.R., con domicilio en: #{Conf.last.domicilio} de la ciudad de  CULIACÁN, SINALOA  a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el Sr(a) #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de las siguientes:
+     text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente contrato de credito y garantía, por una parte el(la) #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} de la ciudad de  CULIACÁN, SINALOA  a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el Sr(a) #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de las siguientes:
 ",:size =>10,:align => :justify 
     text "CLAUSULAS" , :align  => :center, :style=> :bold
     text "PRIMERA: 'La Fundación' ha convenido en otorgar un apoyo económico a 'El Beneficiario' y este dá en garantia un pagaré por el monto total del apoyo. ",:size =>10,:align => :justify 
@@ -128,37 +120,8 @@ class ContratoPdf < Prawn::Document
     text"         'La Fundación'                                                                                                             'El Beneficiario'",:size =>10,:align => :justify 
     text"
     "
-   text" * CAT (Costo Anual Total) #{@credit.cat_sin_iva}% sin IVA.
-    * Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF)
-     Tel. (55)5340 0999 y 01 800 999 8080 www.condusef.gob.mx
-    * Registro de Contratos de Adhesión (RECA) Número: #{@credit.product.registro_del_contrado_de_adhesion}
-    
-    ",:size =>8,:align => :justify  
+   
 start_new_page
     
-text "PAGARÉ                                                                                                     No._______ BUENO POR $ ________________",:size =>10
-text" 
-"
-text "En ___________________________ a ____ de _____________ de 20___ ",:size =>10,:align => :right
-text" 
-"
-text "Debo(emos) y pagaré(mos) incondicionalmente por este pagaré a la orden de __________________________________",:size =>10,:align => :justify 
-text" 
-"
-text "______________________________________________________ el ________________________________________",:size =>10,:align => :justify 
-text" 
-"
-text "Valor recibido a mi(nuestra) entera satisfacción. Este pagaré está sujeto a las condiciones de que al no pagarse a su vencimiento, será exigible desde la fecha de su vencimiento de este documento hasta el dia de su total liquidación, causando intereses moratorios al tipo de _____% mensual pagadero en esta ciudad juntamente con el principal.
 
-",:size =>10,:align => :justify 
-text "Nombre y datos de 'El Beneficiario'                          Nombre y datos de 'EL AVAL'",:size =>10,:align => :center 
-text" "
-text "Nombre: _______________________________________     Nombre: _______________________________________",:size =>10,:align => :justify 
-text"   "
-text "Domicilio:__________________________Tel._________       Domicilio:__________________________Tel._________",:size =>10,:align => :justify 
-text "Acepto(amos)                                                                           Acepto(amos)",:size =>10,:align => :left 
-text" 
-"
-text "Firma(s)________________________________________      Firma(s)________________________________________",:size =>10,:align => :justify 
-  end
 end
