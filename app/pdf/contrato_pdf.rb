@@ -121,7 +121,5 @@ class ContratoPdf < Prawn::Document
     text"
     "
    
-start_new_page
-    
-
+ end
 end
