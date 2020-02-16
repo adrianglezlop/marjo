@@ -8,9 +8,8 @@
       <th>Periodo</th>
       <th>Fecha de pago</th>
       <th>Saldo inicial</th>
-      <th>Capital</th>
-      <th>Interés</th>
-      <th>Iva interés</th>
+      <th>Amortización del Apoyo Económico</th>
+      <th>Beneficio Fundación</th>
       <th>Pago total</th>
       <th>Saldo final</th>
     </tr>
@@ -28,12 +27,11 @@
         <td><%= (@total-((n)*@pago)) %></td>
         <td><%= @capital %></td>
         <td><%= @interes %></td>
-        <td><%= @iva %></td>
         <td><%= @pago %></td>
         <td><%= (@total-((n)*@pago))-@pago %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-n, @credit.fecha, (total-((n-1)*pago)),capital,interes,iva,pago,"hola" 
+n, @credit.fecha, (total-((n-1)*pago)),capital,interes,pago,"hola" 
 <br>
