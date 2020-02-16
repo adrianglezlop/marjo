@@ -121,5 +121,31 @@ class ContratoPdf < Prawn::Document
     text"
     "
    
- end
+start_new_page
+    
+text "PAGARÉ                                                                                                     No._______ BUENO POR $ ________________",:size =>10
+text" 
+"
+text "En ___________________________ a ____ de _____________ de 20___ ",:size =>10,:align => :right
+text" 
+"
+text "Debo(emos) y pagaré(mos) incondicionalmente por este pagaré a la orden de __________________________________",:size =>10,:align => :justify 
+text" 
+"
+text "______________________________________________________ el ________________________________________",:size =>10,:align => :justify 
+text" 
+"
+text "Valor recibido a mi(nuestra) entera satisfacción. Este pagaré está sujeto a las condiciones de que al no pagarse a su vencimiento, será exigible desde la fecha de su vencimiento de este documento hasta el dia de su total liquidación, causando intereses moratorios al tipo de _____% mensual pagadero en esta ciudad juntamente con el principal.
+
+",:size =>10,:align => :justify 
+text "Nombre y datos de 'El Beneficiario'                          Nombre y datos de 'EL OBLIGADO SOLIDARIO'",:size =>10,:align => :center 
+text" "
+text "Nombre: _______________________________________     Nombre: _______________________________________",:size =>10,:align => :justify 
+text"   "
+text "Domicilio:__________________________Tel._________       Domicilio:__________________________Tel._________",:size =>10,:align => :justify 
+text "Acepto(amos)                                                                           Acepto(amos)",:size =>10,:align => :left 
+text" 
+"
+text "Firma(s)________________________________________      Firma(s)________________________________________",:size =>10,:align => :justify 
+  end
 end
