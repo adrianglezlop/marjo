@@ -4,11 +4,12 @@ class CorridaPdf < Prawn::Document
     @credit = credit 
     @arreglo = arreglo
     text_content
+    "APOYO A FUNDACIONES"
   end
   
   def header
     #This inserts an image in the pdf file and sets the size of the image
-   "APOYO A FUNDACIONES"
+   
   end
   
   def text_content
