@@ -23,7 +23,8 @@ class CorridaPdf < Prawn::Document
           #["TASA INTERES","#{'%.2f' % @credit.product.taza_de_interes_ordinaria}%"], 
           ["BENEFICIO DE LA FUNDACION","#{'%.2f' % @credit.taza_ord}%"], 
           ["PLAZO "," #{@credit.product.numero_de_pagos_a_realizar} #{@credit.product.etiqueta_plural}"],  
-          ["PERIODICIDAD", @credit.product.payout.periocidad]]:cell_style => { size: 8 })
+          ["PERIODICIDAD", @credit.product.payout.periocidad] 
+          ],:cell_style => { size: 8 })
     move_down 20
     table(@arreglo,:cell_style => { size: 8 })
 
