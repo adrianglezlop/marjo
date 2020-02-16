@@ -179,7 +179,7 @@ class ViewCreditsController < ApplicationController
     #@com_apert = (@capital + @interes) * (@credit.product.comision_apert / 100) 
     @datos = []
     @arreglo = []
-    @arreglo.push(["PERIODO", "FECHA DE PAGO", "SALDO INICIAL", "CAPITAL", "INTERES", "IVA DE INTERES","PAGO TOTAL", "SALDO FINAL"])
+    @arreglo.push(["PERIODO", "FECHA DE PAGO", "SALDO INICIAL", "AMORTIZACIÓN DL APOYO ECONÓMICO", "BENEFICIO DE LA FUNDACIÓN","PAGO TOTAL", "SALDO FINAL"])
     puts "=========================================================================================================================================="
     @credit.product.numero_de_pagos_a_realizar.times do |n|
         
@@ -192,9 +192,9 @@ class ViewCreditsController < ApplicationController
       puts fecha_de_corte
       puts fecha_de_impresion  
       #              1   2                         4       5          6      7           8                       9                 10            
-      @datos.push([n+1,fecha,(@total-((n)*@pago)),@capital,@interes,@iva,@pago,((@total-((n)*@pago))-@pago),fecha_de_corte,fecha_de_impresion])
+      @datos.push([n+1,fecha,(@total-((n)*@pago)),@capital,@interes,@pago,((@total-((n)*@pago))-@pago),fecha_de_corte,fecha_de_impresion])
       #@datos.push([n+1,fecha,(@total-((n)*@pago)),@capital,@interes,@iva,@com_apert,@pago,((@total-((n)*@pago))-@pago),fecha_de_corte,fecha_de_impresion])
-      @arreglo.push([ "#{n+1}",fecha.to_date.strftime("%d-%m-%Y"),"#{Dinero.to_money((@total-((n)*@pago)).round(2))}","#{Dinero.to_money(@capital.round(2))}","#{Dinero.to_money(@interes.round(2))}","#{Dinero.to_money(@iva.round(2))}","#{Dinero.to_money(@pago.round(2))}","#{Dinero.to_money(((@total-((n)*@pago))-@pago).round(2))}"])
+      @arreglo.push([ "#{n+1}",fecha.to_date.strftime("%d-%m-%Y"),"#{Dinero.to_money((@total-((n)*@pago)).round(2))}","#{Dinero.to_money(@capital.round(2))}","#{Dinero.to_money(@interes.round(2))}","#{Dinero.to_money(@pago.round(2))}","#{Dinero.to_money(((@total-((n)*@pago))-@pago).round(2))}"])
       #@arreglo.push([ "#{n+1}",fecha.to_date.strftime("%d-%m-%Y"),"#{Dinero.to_money((@total-((n)*@pago)).round(2))}","#{Dinero.to_money(@capital.round(2))}","#{Dinero.to_money(@interes.round(2))}","#{Dinero.to_money(@iva.round(2))}","#{Dinero.to_money(@com_apert.round(2))}","#{Dinero.to_money(@pago.round(2))}","#{Dinero.to_money(((@total-((n)*@pago))-@pago).round(2))}"])
     end
     puts "=========================================================================================================================================="
