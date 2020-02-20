@@ -11,7 +11,7 @@ class ContratoPdf < Prawn::Document
    " , :align  => :center, :style=> :bold
  
   
-      text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente contrato de apoyo económico, por una parte el(la) #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} de la ciudad de  CULIACÁN, SINALOA  a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el Sr(a) #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de las siguientes:
+      text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente contrato de apoyo económico, por una parte el(la) #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} de la ciudad de  #{Conf.last.ciudad}  a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el Sr(a) #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de las siguientes:
 ",:size =>10,:align => :justify 
     text "CLAUSULAS" , :align  => :center, :style=> :bold
     text "PRIMERA: 'La Fundación' ha convenido en otorgar un apoyo económico a 'El Beneficiario' y este dá en garantia un pagaré por el monto total del apoyo. ",:size =>10,:align => :justify 
