@@ -26,7 +26,7 @@ class PolizaPdf < Prawn::Document
     draw_text  "______________________________________________________________________", :at => [70,620+des]
     draw_text  "La cantidad de: ",:size=>8, :at => [70,610+des]
     
-    image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,600+des]
+    #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,600+des]
     
     draw_text  "_________________________", :at => [370,580+des]
     draw_text  "FIRMA APOYO ECONÓMICO RECIBIDO ",:size=>8, :at => [400,570+des]
@@ -60,7 +60,7 @@ class PolizaPdf < Prawn::Document
     draw_text  "______________________________________________________________________", :at => [70,620+des]
     draw_text  "La cantidad de: ",:size=>8, :at => [70,610+des]
     
-    image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,600+des]
+    #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,600+des]
     
     draw_text  "_________________________", :at => [370,580+des]
     draw_text  "FIRMA APOYO ECONÓMICO RECIBIDO ",:size=>8, :at => [400,570+des]

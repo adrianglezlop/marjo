@@ -27,7 +27,7 @@ class AutorizacionPdf < Prawn::Document
   end
   def text_content
      font_size 9
-     image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, position: :left
+     #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, position: :left
      text " "
      text " "
      text "Autorización para solicitar Reportes de Crédito" , :size => 10,:align => :center, :style => :bold
