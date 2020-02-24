@@ -5,7 +5,7 @@ class EntrevistaPdf < Prawn::Document
     text_content
   end
   def text_content
-    image "#{Rails.root}/app/assets/images/logo marjo.png", width: 190, height: 45
+    #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 190, height: 45
       text "________________________________________________________________________________"
       text "
       ENTREVISTA DEL BENEFICIARIO 
