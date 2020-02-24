@@ -8,9 +8,9 @@ class EntrevistaPdf < Prawn::Document
     image "#{Rails.root}/app/assets/images/logo marjo.png", width: 190, height: 45
       text "________________________________________________________________________________"
       text "
-      ENTREVISTA DEL CLIENTE 
+      ENTREVISTA DEL BENEFICIARIO 
       ",:size => 10, :align => :center, :style  => :bold
-      text "Sucursal :#{@credit.padre.branch_office.nombre} Empresa : #{@credit.padre.nombre_completo}
+      text "Fundación :#{@credit.padre.branch_office.nombre} Promotor de Apoyo : #{@credit.padre.nombre_completo}
       ",:size => 10
       text "R.F.C. : #{@credit.customer.RFC} CURP : #{@credit.customer.CURP} INE/IFE : #{@credit.customer.INE}
       ",:size => 10

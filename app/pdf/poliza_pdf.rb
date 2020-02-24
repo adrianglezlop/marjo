@@ -11,7 +11,7 @@ class PolizaPdf < Prawn::Document
     draw_text  "#{Conf.last.domicilio}",:size=>9, :at => [70,710+des]
     draw_text  "CULIACAN DE ROSALES, SINALOA C.P. 80128",:size=>9, :at => [70,700+des]
     draw_text  "#{Conf.last.RFC}",:size=>9, :at => [70,690+des]
-    draw_text  "SUCURSAL: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
+    draw_text  "FUNDACIÓN: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
     
     draw_text  "Original ", :at => [460,730+des]
     draw_text  "FECHA ",:size=>9, :at => [460,710+des]
@@ -45,7 +45,7 @@ class PolizaPdf < Prawn::Document
     draw_text  "#{Conf.last.domicilio}",:size=>9, :at => [70,710+des]
     draw_text  "CULIACAN DE ROSALES, SINALOA C.P. 80128",:size=>9, :at => [70,700+des]
     draw_text  "#{Conf.last.RFC}",:size=>9, :at => [70,690+des]
-    draw_text  "SUCURSAL: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
+    draw_text  "FUNDACIÓN: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
     
     draw_text  "Copia ", :at => [460,730+des]
     draw_text  "FECHA ",:size=>9, :at => [460,710+des]

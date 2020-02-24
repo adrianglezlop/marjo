@@ -19,9 +19,10 @@ class ReciboPdf < Prawn::Document
         des = 0
       rectangle [50,750+des], 500, 190
       
-      image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
+      
+      #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
-      draw_text  "FECHA : #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
+      draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
       draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
@@ -43,9 +44,9 @@ ECONÓMICO ",:size=>9, :at => [70,626+des]
         des = -230
       rectangle [50,750+des], 500, 190
       
-      image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
+      #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
-      draw_text  "FECHA : #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
+      draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
       draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
@@ -66,9 +67,9 @@ ECONÓMICO ",:size=>9, :at => [70,626+des]
         des = -470
       rectangle [50,750+des], 500, 190
       
-      image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
+      #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
-      draw_text  "FECHA : #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
+      draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
       draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
