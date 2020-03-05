@@ -8,7 +8,7 @@ class ContratoPdf < Prawn::Document
   def text_content
         text "Original",:size =>8,:align  => :right
    text "CONVENIO DE COLABORACIÓN PARA EL OTORGAMIENTO DE UN APOYO ECONÓMICO SOCIAL" , :size =>10, :align  => :center
-   text ""
+   text " "
     text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente convenio de colaboración para el otorgamiento de un apoyo económico social, por una parte el(la) Sr(a). #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} en la ciudad de CULIACAN, SIN. a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el(la) Sr(a). #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de los siguientes antecedentes y claúsulas:",:size =>10,:align => :justify 
 text ""    
     text "I.- La Fundación ___________________________, es una Organización de la Sociedad Civil que tiene como objeto el realizar las siguientes actividades de Fomento: " ,:size =>10, :align  => :justify
