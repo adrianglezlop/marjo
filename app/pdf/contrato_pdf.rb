@@ -10,7 +10,7 @@ class ContratoPdf < Prawn::Document
    text "CONVENIO DE COLABORACIÓN PARA EL OTORGAMIENTO DE UN APOYO ECONÓMICO SOCIAL" , :size =>10, :align  => :center
    text " "
     text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente convenio de colaboración para el otorgamiento de un apoyo económico social, por una parte el(la) Sr(a). #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} en la ciudad de CULIACAN, SIN. a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el(la) Sr(a). #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de los siguientes antecedentes y claúsulas:",:size =>10,:align => :justify 
-text ""    
+    text " "    
     text "I.- La Fundación ___________________________, es una Organización de la Sociedad Civil que tiene como objeto el realizar las siguientes actividades de Fomento: " ,:size =>10, :align  => :justify
     text "1) Cívicas, enfocadas a promover la participación ciudadana en asuntos de interés público." , :size =>10, :align  => :justify
     text "2) Fomento de acciones para mejorar la economía popular." , :size =>10, :align  => :justify
@@ -18,7 +18,7 @@ text ""
     text "4) La realización de actividades de asistencia social que tengan como beneficiarios a personas, sectores y regiones de escasos recursos; que realicen actividades para lograr mejores condiciones d subsistencia y desarrollo a las comunidades indígenas y a los grupos vulnerables por edad, sexo o problemas de discapacidad, dedicadas, entre otras a: la atención a requerimientos básicos de subsistencia en materia de alimentaciín, vestido o vivienda; Orientación social , educación o capacitación para el trabajo; Aportación de servicios para la atención a grupos sociales con discapacidad; Fomento de acciones para mejorar la economía popular, entre otros. " , :size =>10, :align  => :justify
     text "II.- 'La Fundación' tiene la prohibición expresa de otorgar los apoyos materia de este convenio a sus integrantes o a sus parientes colaterales hasta el cuarto grado, situación que, se manifiesta, no se da en la presente colaboración." , :align  => :justify
     text "III.- 'El Beneficiario' comprende la importancia de la presente colaboración y se compromete a regresar el importe d las cantidades otorgadas, y los montos adicionales convenidos, consciente de que es la manera de seguir beneficiando a más personas y con la oportunidad recibida por este apoyo, sabiendo que no es una entrega económica a fondo perdido y que con su puntual cumplimiento en los montos y fechas límite de retorno del beneficio recibido, 'La Fundación' podrá seguir desarrollando sus objetivos sociales de ayuda y apoyo a diversos sectores de la población, todos ellos autorizados por la Secretaría de Hacienda y Crédito Público, a través del Servicio de Administración Tributaria." , :size =>10, :align  => :justify
-    
+    text " " 
     text "CLAUSULAS" ,:size =>10, :align  => :center
     text "PRIMERA: 'La Fundación' ha convenido en otorgar un apoyo económico social a 'El Beneficiario' y este se compromete a reponer el monto total del importe recibido y las cantidades adicionales que servirán para la composición del Fondo Revolvente de 'La Fundación'. ",:size =>10,:align => :justify
     text "Como garantía de cumplimiento, junto con la firma del presente convenio, 'El Beneficiario' firmará un Título de Crédito(Pagaré) por el monto total del apoyo, así como por el monto de las cantidades adicionales para la recomposición del Fondo Revolvente.",:size =>10,:align => :justify 
@@ -46,7 +46,7 @@ text ""
     text" Para constancia y efectos legales, los contratantes firman el presente contrato en la ciudad de #{@credit.padre.municipio}, #{@credit.padre.estado}  el día de #{@credit.fecha_en_español}.",:size =>10,:align => :justify 
     text"  __________________________                                                                          ________________________",:size =>10,:align => :justify 
     text"         'La Fundación'                                                                                                             'El Beneficiario'",:size =>10,:align => :justify 
-    text" "
+    text " " 
   
     start_new_page
     
@@ -54,9 +54,9 @@ text ""
     
    text"Copia 1",:size =>8,:align  => :right
    text "CONVENIO DE COLABORACIÓN PARA EL OTORGAMIENTO DE UN APOYO ECONÓMICO SOCIAL" , :size =>10, :align  => :center
-   text ""
+   text " "
     text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente convenio de colaboración para el otorgamiento de un apoyo económico social, por una parte el(la) Sr(a). #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} en la ciudad de CULIACAN, SIN. a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el(la) Sr(a). #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de los siguientes antecedentes y claúsulas:",:size =>10,:align => :justify 
-text ""    
+    text " "    
     text "I.- La Fundación ___________________________, es una Organización de la Sociedad Civil que tiene como objeto el realizar las siguientes actividades de Fomento: " ,:size =>10, :align  => :justify
     text "1) Cívicas, enfocadas a promover la participación ciudadana en asuntos de interés público." , :size =>10, :align  => :justify
     text "2) Fomento de acciones para mejorar la economía popular." , :size =>10, :align  => :justify
@@ -64,7 +64,7 @@ text ""
     text "4) La realización de actividades de asistencia social que tengan como beneficiarios a personas, sectores y regiones de escasos recursos; que realicen actividades para lograr mejores condiciones d subsistencia y desarrollo a las comunidades indígenas y a los grupos vulnerables por edad, sexo o problemas de discapacidad, dedicadas, entre otras a: la atención a requerimientos básicos de subsistencia en materia de alimentaciín, vestido o vivienda; Orientación social , educación o capacitación para el trabajo; Aportación de servicios para la atención a grupos sociales con discapacidad; Fomento de acciones para mejorar la economía popular, entre otros. " , :size =>10, :align  => :justify
     text "II.- 'La Fundación' tiene la prohibición expresa de otorgar los apoyos materia de este convenio a sus integrantes o a sus parientes colaterales hasta el cuarto grado, situación que, se manifiesta, no se da en la presente colaboración." , :align  => :justify
     text "III.- 'El Beneficiario' comprende la importancia de la presente colaboración y se compromete a regresar el importe d las cantidades otorgadas, y los montos adicionales convenidos, consciente de que es la manera de seguir beneficiando a más personas y con la oportunidad recibida por este apoyo, sabiendo que no es una entrega económica a fondo perdido y que con su puntual cumplimiento en los montos y fechas límite de retorno del beneficio recibido, 'La Fundación' podrá seguir desarrollando sus objetivos sociales de ayuda y apoyo a diversos sectores de la población, todos ellos autorizados por la Secretaría de Hacienda y Crédito Público, a través del Servicio de Administración Tributaria." , :size =>10, :align  => :justify
-    
+    text " " 
     text "CLAUSULAS" ,:size =>10, :align  => :center
     text "PRIMERA: 'La Fundación' ha convenido en otorgar un apoyo económico social a 'El Beneficiario' y este se compromete a reponer el monto total del importe recibido y las cantidades adicionales que servirán para la composición del Fondo Revolvente de 'La Fundación'. ",:size =>10,:align => :justify
     text "Como garantía de cumplimiento, junto con la firma del presente convenio, 'El Beneficiario' firmará un Título de Crédito(Pagaré) por el monto total del apoyo, así como por el monto de las cantidades adicionales para la recomposición del Fondo Revolvente.",:size =>10,:align => :justify 
@@ -92,15 +92,15 @@ text ""
     text" Para constancia y efectos legales, los contratantes firman el presente contrato en la ciudad de #{@credit.padre.municipio}, #{@credit.padre.estado}  el día de #{@credit.fecha_en_español}.",:size =>10,:align => :justify 
     text"  __________________________                                                                          ________________________",:size =>10,:align => :justify 
     text"         'La Fundación'                                                                                                             'El Beneficiario'",:size =>10,:align => :justify 
-    text" "
+    text " " 
     
     start_new_page
     
    text"Copia 2",:size =>8,:align  => :right
    text "CONVENIO DE COLABORACIÓN PARA EL OTORGAMIENTO DE UN APOYO ECONÓMICO SOCIAL" , :size =>10, :align  => :center
-   text ""
+   text " "
     text "En la ciudad de #{@credit.padre.municipio}, a #{@credit.fecha_en_español} comparecieron para celebrar el presente convenio de colaboración para el otorgamiento de un apoyo económico social, por una parte el(la) Sr(a). #{Conf.last.representante_legal}, representante legal de ___________________________, con domicilio en: #{Conf.last.domicilio} en la ciudad de CULIACAN, SIN. a quien en lo sucesivo se le denominará 'La Fundación', y por otra parte el(la) Sr(a). #{@credit.nombre_completo_deudor} con domicilio en #{@credit.domicilio } a quien en lo sucesivo se le denominará 'El Beneficiario', al tenor de los siguientes antecedentes y claúsulas:",:size =>10,:align => :justify 
-text ""    
+    text " "    
     text "I.- La Fundación ___________________________, es una Organización de la Sociedad Civil que tiene como objeto el realizar las siguientes actividades de Fomento: " ,:size =>10, :align  => :justify
     text "1) Cívicas, enfocadas a promover la participación ciudadana en asuntos de interés público." , :size =>10, :align  => :justify
     text "2) Fomento de acciones para mejorar la economía popular." , :size =>10, :align  => :justify
@@ -108,7 +108,7 @@ text ""
     text "4) La realización de actividades de asistencia social que tengan como beneficiarios a personas, sectores y regiones de escasos recursos; que realicen actividades para lograr mejores condiciones d subsistencia y desarrollo a las comunidades indígenas y a los grupos vulnerables por edad, sexo o problemas de discapacidad, dedicadas, entre otras a: la atención a requerimientos básicos de subsistencia en materia de alimentaciín, vestido o vivienda; Orientación social , educación o capacitación para el trabajo; Aportación de servicios para la atención a grupos sociales con discapacidad; Fomento de acciones para mejorar la economía popular, entre otros. " , :size =>10, :align  => :justify
     text "II.- 'La Fundación' tiene la prohibición expresa de otorgar los apoyos materia de este convenio a sus integrantes o a sus parientes colaterales hasta el cuarto grado, situación que, se manifiesta, no se da en la presente colaboración." , :align  => :justify
     text "III.- 'El Beneficiario' comprende la importancia de la presente colaboración y se compromete a regresar el importe d las cantidades otorgadas, y los montos adicionales convenidos, consciente de que es la manera de seguir beneficiando a más personas y con la oportunidad recibida por este apoyo, sabiendo que no es una entrega económica a fondo perdido y que con su puntual cumplimiento en los montos y fechas límite de retorno del beneficio recibido, 'La Fundación' podrá seguir desarrollando sus objetivos sociales de ayuda y apoyo a diversos sectores de la población, todos ellos autorizados por la Secretaría de Hacienda y Crédito Público, a través del Servicio de Administración Tributaria." , :size =>10, :align  => :justify
-    
+    text " " 
     text "CLAUSULAS" ,:size =>10, :align  => :center
     text "PRIMERA: 'La Fundación' ha convenido en otorgar un apoyo económico social a 'El Beneficiario' y este se compromete a reponer el monto total del importe recibido y las cantidades adicionales que servirán para la composición del Fondo Revolvente de 'La Fundación'. ",:size =>10,:align => :justify
     text "Como garantía de cumplimiento, junto con la firma del presente convenio, 'El Beneficiario' firmará un Título de Crédito(Pagaré) por el monto total del apoyo, así como por el monto de las cantidades adicionales para la recomposición del Fondo Revolvente.",:size =>10,:align => :justify 
@@ -136,7 +136,7 @@ text ""
     text" Para constancia y efectos legales, los contratantes firman el presente contrato en la ciudad de #{@credit.padre.municipio}, #{@credit.padre.estado}  el día de #{@credit.fecha_en_español}.",:size =>10,:align => :justify 
     text"  __________________________                                                                          ________________________",:size =>10,:align => :justify 
     text"         'La Fundación'                                                                                                             'El Beneficiario'",:size =>10,:align => :justify 
-    text" "
+    text " " 
     
     start_new_page
     
