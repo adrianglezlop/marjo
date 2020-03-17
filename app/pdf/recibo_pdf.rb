@@ -69,8 +69,8 @@ ECONÓMICO ",:size=>9, :at => [70,626+des]
       
       #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,740+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
-      draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
-      draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
+      draw_text  "FECHA: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
+      draw_text  "FUNDACIÓN: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
       draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
       
@@ -78,9 +78,9 @@ ECONÓMICO ",:size=>9, :at => [70,626+des]
       
       draw_text  "RECIBÍ DE : #{ticket.payment.credit.nombre_completo_deudor} ",:size=>9, :at => [70,665+des]
       draw_text  "LA CANTIDAD DE:  #{Dinero.to_money(ticket.cantidad)}",:size=>9, :at => [70,652+des]
-      draw_text  "                     (#{(I18n.with_locale(:es) { (ticket.cantidad).to_i.to_words }).upcase } PESOS 00/100 M.N.)",:size=>9, :at => [70,639+des]
+      draw_text  "IMPORTE EN LETRA: (#{(I18n.with_locale(:es) { (ticket.cantidad).to_i.to_words }).upcase } PESOS 00/100 M.N.)",:size=>9, :at => [70,639+des]
       draw_text  "POR CONCEPTO DE: PAGO O ABONO AL CARGO #{ticket.payment.credit.product.payout.periocidad} #{ticket.payment.recibo} AL APOYO
-ECONÓMICO ",:size=>9, :at => [70,626+des]
+ECONÓMICO OTORGADO EL ",:size=>9, :at => [70,626+des]
       draw_text  "                  OTORGADO EL #{Auxiliar.fecha_formato(ticket.payment.credit.fecha_de_contrato)}",:size=>9, :at => [70,613+des]
       draw_text  "ATRASADO ACTUAL DE: #{Dinero.to_money at} ",:size=>9, :at => [70,600+des]
       

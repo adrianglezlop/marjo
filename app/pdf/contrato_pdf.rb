@@ -155,7 +155,7 @@ text"
 text "Valor recibido a mi(nuestra) entera satisfacción. Este pagaré está sujeto a las condiciones de que al no pagarse a su vencimiento, será exigible desde la fecha de su vencimiento de este documento hasta el dia de su total liquidación, causando intereses moratorios al tipo de _____% mensual pagadero en esta ciudad juntamente con el principal.
 
 ",:size =>10,:align => :justify 
-text "Nombre y datos de 'El Beneficiario'                          Nombre y datos de 'EL OBLIGADO SOLIDARIO'",:size =>10,:align => :center 
+text "Nombre y datos de 'El Deudor'                          Nombre y datos de 'EL OBLIGADO SOLIDARIO'",:size =>10,:align => :center 
 text" "
 text "Nombre: _______________________________________     Nombre: _______________________________________",:size =>10,:align => :justify 
 text"   "
