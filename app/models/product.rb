@@ -87,11 +87,11 @@ class Product < ActiveRecord::Base
                     seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fechainput.to_date)[0]
                     tuplas = Auxiliar.seguimiento_por_creditos(creditos, fechainput)
                     tuplas.each do |t|
-                         Seguimiento.update(
-                              cobrado:t["cobrado"], 
-                              diferencia:t["diferencia"],
-                              adelantado:t["adelantado"]
-                         )
+                         #Seguimiento.update(
+                         #     cobrado:t["cobrado"], 
+                         #     diferencia:t["diferencia"],
+                         #     adelantado:t["adelantado"]
+                         #)
                     end
                end
           else
