@@ -79,9 +79,24 @@ class Product < ActiveRecord::Base
      
      def almacenar_seguimientos(fechainput)
           creditos = self.credits.where(status:1).order(:apellido_paterno)
-          return if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
-          tuplas = Auxiliar.seguimiento_por_creditos(creditos, fechainput)
-          tuplas.each do |t|
+          #return if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
+          if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
+               credits.each do |credit|
+                    next if credit.status == 3
+                    next if credit.fecha_de_contrato >= fecha
+                    seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fecha.to_date)[0]
+                    tuplas = Auxiliar.seguimiento_por_creditos(creditos, fechainput)
+                    tuplas.each do |t|
+                         Seguimiento.update(
+                              cobrado:t["cobrado"], 
+                              diferencia:t["diferencia"],
+                              adelantado:t["adelantado"]
+                         )
+                    end
+               end
+          else
+               tuplas = Auxiliar.seguimiento_por_creditos(creditos, fechainput)
+               tuplas.each do |t|
                Seguimiento.create(
                     nombre:t["nombre_completo"], 
                     fecha_prestamo:t["fecha"], 
@@ -102,7 +117,8 @@ class Product < ActiveRecord::Base
                     credit_id:t["credit_id"],
                     fecha_corte:t["fecha_corte"]
                )
-          end
+               end
+          end 
      end
      def vencer(fecha=Time.now.to_date)
           desplazo = 0 
