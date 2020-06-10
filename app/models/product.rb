@@ -83,8 +83,8 @@ class Product < ActiveRecord::Base
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
                credits.each do |credit|
                     next if credit.status == 3
-                    next if credit.fecha_de_contrato >= fecha
-                    seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fecha.to_date)[0]
+                    next if credit.fecha_de_contrato >= fechainput
+                    seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fechainput.to_date)[0]
                     tuplas = Auxiliar.seguimiento_por_creditos(creditos, fechainput)
                     tuplas.each do |t|
                          Seguimiento.update(
