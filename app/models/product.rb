@@ -81,13 +81,11 @@ class Product < ActiveRecord::Base
           creditos = self.credits.where(status:1).order(:apellido_paterno)
           #return if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
-               credits.each do |credit|
-                    next if credit.status == 3
-                    next if credit.fecha_de_contrato >= fechainput
-                    #seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fechainput.to_date)[0]
-                    tuplas = Auxiliar.seguimiento_por_creditos(creditos, fechainput)
-                    tuplas.each do |t|
-                         Seguimiento.update(
+               
+                         #seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fechainput.to_date)[0]
+                         tuplas = Auxiliar.seguimiento_por_creditos(credit, fechainput)
+                         tuplas.each do |t|
+                              Seguimiento.update(
                               nombre:t["nombre_completo"], 
                               fecha_prestamo:t["fecha"], 
                               capital:t["monto_solicitud"], 
@@ -106,9 +104,8 @@ class Product < ActiveRecord::Base
                               payment_id:t["payment_ref"],
                               credit_id:t["credit_id"],
                               fecha_corte:t["fecha_corte"]
-                         )
-                    end
-               end
+                              )
+                         end
           
           end 
      end
