@@ -83,7 +83,7 @@ class Product < ActiveRecord::Base
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
                
                          #seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fechainput.to_date)[0]
-                         tuplas = Auxiliar.seguimiento_por_creditos(credit, fechainput)
+                         tuplas = Auxiliar.seguimiento_por_creditos(credits, fechainput)
                          tuplas.each do |t|
                               #Seguimiento.update(
                               #nombre:t["nombre_completo"], 
