@@ -179,7 +179,7 @@ class ViewCreditsController < ApplicationController
     #@com_apert = (@capital + @interes) * (@credit.product.comision_apert / 100) 
     @datos = []
     @arreglo = []
-    @arreglo.push(["PERIODO", "FECHA DE PAGO", "SALDO INICIAL", "AMORTIZACIÓN DEL APOYO ECONÓMICO", "BENEFICIO DE LA FUNDACIÓN","PAGO TOTAL", "SALDO FINAL"])
+    @arreglo.push(["PERIODO", "FECHA DE PAGO", "SALDO INICIAL", "AMORTIZACIÓN DEL BENEFICIO DE DESARROLLO SOCIAL", "BENEFICIO DE LA FUNDACIÓN","PAGO TOTAL", "SALDO FINAL"])
     puts "=========================================================================================================================================="
     @credit.product.numero_de_pagos_a_realizar.times do |n|
         
