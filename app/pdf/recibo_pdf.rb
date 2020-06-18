@@ -24,7 +24,7 @@ class ReciboPdf < Prawn::Document
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
       draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
-      draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
+      draw_text  "PROMOTOR DEL BENEFICIO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
       
       draw_text  "ORIGINAL ",:size=>8, :at => [500,735+des]
@@ -48,7 +48,7 @@ ECONÓMICO ",:size=>9, :at => [70,626+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
       draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
-      draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
+      draw_text  "PROMOTOR DEL BENEFICIO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
       
       draw_text  "ORIGINAL ",:size=>8, :at => [500,735+des]
@@ -71,7 +71,7 @@ ECONÓMICO ",:size=>9, :at => [70,626+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
       draw_text  "FECHA: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACIÓN: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
-      draw_text  "PROMOTOR DE APOYO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
+      draw_text  "PROMOTOR DEL BENEFICIO: #{ticket.payment.credit.padre.nombre_completo}",:size=>9, :at => [420,675+des]
   
       
       draw_text  "ORIGINAL ",:size=>8, :at => [500,735+des]
