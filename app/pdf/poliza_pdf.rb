@@ -63,11 +63,11 @@ class PolizaPdf < Prawn::Document
     #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45, :at => [70,600+des]
     
     draw_text  "_________________________", :at => [370,580+des]
-    draw_text  "FIRMA BENEFICIO DE DESARROLLO SOCIAL RECIBIDO ",:size=>8, :at => [400,570+des]
+    draw_text  "FIRMA BENEFICIO DE DESARROLLO SOCIAL RECIBIDO ",:size=>8, :at => [400,370+des]
     
     draw_text  "BANCO:  #{@credit.padre.branch_office.banco}  ",:size=> 9, :at => [70,520+des]
     draw_text  "CUENTA:  #{@credit.padre.branch_office.cuenta}  ",:size=> 9, :at => [170,520+des]
-    draw_text  "PROMOTOR DE BENEFICIO DE DESARROLLO SOCIAL:  #{@credit.padre.nombre_completo}  ",:size=> 9, :at => [370,520+des]
+    draw_text  "PROMOTOR DE BENEFICIO DE DESARROLLO SOCIAL:  #{@credit.padre.nombre_completo}  ",:size=> 9, :at => [370,400+des]
     stroke()
   end
 end
