@@ -33,7 +33,7 @@ class PolizaPdf < Prawn::Document
     
     draw_text  "BANCO:  #{@credit.padre.branch_office.banco}  ",:size=> 9, :at => [70,520+des]
     draw_text  "CUENTA:  #{@credit.padre.branch_office.cuenta}  ",:size=> 9, :at => [170,520+des]
-    draw_text  "PROMOTOR DE BENEFICIO DE DESARROLLO SOCIAL:  #{@credit.padre.nombre_completo}  ",:size=> 8, :at => [290,520+des]
+    draw_text  "PROMOTOR DE BENEFICIO:  #{@credit.padre.nombre_completo}  ",:size=> 8, :at => [290,520+des]
     
     rectangle [50,350], 500, 250 
     
@@ -67,7 +67,7 @@ class PolizaPdf < Prawn::Document
     
     draw_text  "BANCO:  #{@credit.padre.branch_office.banco}  ",:size=> 8, :at => [70,520+des]
     draw_text  "CUENTA:  #{@credit.padre.branch_office.cuenta}  ",:size=> 8, :at => [170,520+des]
-    draw_text  "PROMOTOR DE BENEFICIO DE DESARROLLO SOCIAL:  #{@credit.padre.nombre_completo}  ",:size=> 8, :at => [290,520+des]
+    draw_text  "PROMOTOR DE BENEFICIO:  #{@credit.padre.nombre_completo}  ",:size=> 8, :at => [290,520+des]
     stroke()
   end
 end
