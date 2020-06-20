@@ -3,10 +3,10 @@ class Seguimiento < ActiveRecord::Base
     
     def update(xcred,xcob, xfecha)
         #self.update(cobrado: 0).where("credit_id= ? and fecha_corte= ?",xcob,xcred, xfecha)
-        #s=Seguimiento.where("credit_id= ? and fecha_corte= ?", xcred, xfecha).first
+        s=Seguimiento.where("credit_id= ? and fecha_corte= ?", xcred, xfecha).first
        
-        #s.cobrado == 1
-        #s.save()
+        s.cobrado = xcob.to_f
+        s.save()
 
     end
 end
