@@ -7,6 +7,6 @@ class Seguimiento < ActiveRecord::Base
        
         s.cobrado = xcob.to_f
         s.save()
-         return xcob
+        return s.cobrado
     end
 end
