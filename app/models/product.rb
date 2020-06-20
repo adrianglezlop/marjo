@@ -82,7 +82,7 @@ class Product < ActiveRecord::Base
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
                tuplas.each do |t|
-                    Seguimiento.update(
+                    #seguimiento.update(t["credit_id"],t["cobrado"], fechainput)
                     #nombre:t["nombre_completo"], 
                     #fecha_prestamo:t["fecha"], 
                     #capital:t["monto_solicitud"], 
@@ -92,16 +92,16 @@ class Product < ActiveRecord::Base
                     #atrasado:t["atrasado"], 
                     #interés_moratorio:t["interes_moratorio"], 
                     #total_a_cobrar:t["total_a_cobrar"], 
-                    cobrado=t["cobrado"], 
-                    diferencia=t["diferencia"],
-                    adelantado=t["adelantado"] 
+                    #cobrado=t["cobrado"], 
+                    #diferencia=t["diferencia"],
+                    #adelantado=t["adelantado"] 
                     #empresa:t["empresa"],
                     #no_pago:t["numero_de_pago"], 
                     #no_creditos:t["numero_de_creditos"],
                     #payment_id:t["payment_ref"],
                     #credit_id:t["credit_id"],
                     #fecha_corte:t["fecha_corte"]
-                    )
+                    #)
                end
           end
      end
