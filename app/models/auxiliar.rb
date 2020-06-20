@@ -243,7 +243,7 @@ class Auxiliar < ActiveRecord::Base
         seguimiento  = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fecha.to_date)[0]
         if seguimiento.nil?
           next if credit.status == 3
-          next if credit.fecha_de_contrato >= fecha
+          next if credit.fecha_de_contrato > fecha
           tabla << self.generador_de_tuplas(credit,fecha)
           next
         end
