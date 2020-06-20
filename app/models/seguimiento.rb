@@ -5,7 +5,7 @@ class Seguimiento < ActiveRecord::Base
         #self.update(cobrado: 0).where("credit_id= ? and fecha_corte= ?",xcob,xcred, xfecha)
         s=Seguimiento.where("credit_id= ? and fecha_corte= ?", xcred, xfecha).first
        
-        s.cobrado = 1
+        s.cobrado == 1
         s.save()
         #return s.cobrado
     end
