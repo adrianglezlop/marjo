@@ -78,11 +78,11 @@ class Product < ActiveRecord::Base
      end
      
      def modificar_seguimientos(fechainput)
-          creditos = self.credits.where("status=1 and id=910").order(:apellido_paterno)
+          creditos = self.credits.where("status=1 and id=1908").order(:apellido_paterno)
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos(creditos,fechainput)
                tuplas.each do |t|
-                    #seguimiento.update(t["credit_id"],t["cobrado"], fechainput)
+                    seguimiento.update(t["credit_id"],t["cobrado"], fechainput)
                     #nombre:t["nombre_completo"], 
                     #fecha_prestamo:t["fecha"], 
                     #capital:t["monto_solicitud"], 
