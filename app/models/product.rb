@@ -80,7 +80,7 @@ class Product < ActiveRecord::Base
      def modificar_seguimientos(fechainput)
           creditos = self.credits.where(status:1).order(:apellido_paterno)
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
-               tuplas = Auxiliar.seguimiento_por_creditos_guardados(credits,fecha)
+               tuplas = Auxiliar.seguimiento_por_creditos_guardados(credits,fechainput)
                tuplas.each do |t|
                     Seguimiento.update(
                     #nombre:t["nombre_completo"], 
