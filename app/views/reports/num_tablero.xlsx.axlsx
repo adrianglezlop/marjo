@@ -31,46 +31,35 @@ def llenar_fila(creditos,nombre, sucursal)
         payments=creditos.joins(:payments)
    
         xadeudo=segui.where("fecha_corte=?",@corte).sum(:adeudo) 
-        #xadeudo=payments.where("estatus<?",2).sum(:importe)
-        #xadeudo=payments.joins(:payments=>:tickets).where("tickets.status=1").sum(:cantidad)
         xcobrado=payments.joins(:payments=>:tickets).where("tickets.status=0 and tickets.updated_at>=?",@corte).sum(:cantidad)
         cartera= xadeudo-xcobrado
         colocado=creditos.where("credits.fecha_de_contrato>= ? and credits.fecha_de_contrato<= ?",@corte, @fecha).sum(:monto_solicitud)
+        
+        #POR COBRAR
         cant_corrxcobrar=segui.where("fecha_corte=? and a_pagar > 0 and atrasado=0",@corte).count
         imp_corrxcobrar=segui.where("fecha_corte=? and a_pagar>0 and atrasado=0",@corte).sum(:a_pagar)
+        
         cant_atrasxcobrar =segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).count
-        xatras=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:atrasado)
-        xapagar=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:a_pagar)
-        imp_atrasxcobrar=xatras + xapagar
-        #imp_atrasxcobrar =segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:atrasado)
-
-
+        #xatras=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:atrasado)
+        #xapagar=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:a_pagar)
+        imp_atrasxcobrar=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:atrasado)
+        
+        cant_vencxcobrar=segui.where("fecha_corte=? and atrasado>0 and a_pagar=0",@corte).count
+        imp_vencxcobrar=segui.where("fecha_corte=? and atrasado>0 and a_pagar=0",@corte).sum(:atrasado)
+        
+        #COBRADOS
+        cant_corr_cobrado=segui.where("fecha_corte=? and a_pagar > 0 and atrasado=0 and cobrado > 0",@corte).count
+        imp_corr_cobrado=segui.where("fecha_corte=? and a_pagar > 0 and atrasado=0 and cobrado > 0",@corte).sum(:cobrado)
+        
         cant_atras_cobrado=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).count
         imp_atras_cobrado=segui.where("fecha_corte=? and atrasado>0 and a_pagar>0",@corte).sum(:cobrado)
 
-
-         cant_venc_cobrado =segui.where("fecha_corte=? and a_pagar=0  and atrasado>0",@corte).count
+        cant_venc_cobrado =segui.where("fecha_corte=? and a_pagar=0  and atrasado>0",@corte).count
+        imp_venc_cobrado =payments.joins(:payments=>:tickets).where("tickets.status=0 and tickets.updated_at<= ? and tickets.updated_at>=?",@fecha, @corte).sum(:cantidad) 
         
-       
-         imp_adelantada=  segui.where("fecha_corte=?",@corte).sum(:adelantado)
+        imp_adelantada=  segui.where("fecha_corte=?",@corte).sum(:adelantado)
 
-       imp_venc_cobrado =payments.joins(:payments=>:tickets).where("tickets.status=0 and tickets.updated_at<= ? and tickets.updated_at>=?",@fecha, @corte).sum(:cantidad) 
-
-
-        cant_vencxcobrar =segui.where("fecha_corte=? and atrasado>0 and a_pagar=0",@corte).count
-        imp_vencxcobrar =segui.where("fecha_corte=? and atrasado>0 and a_pagar=0",@corte).sum(:atrasado)
         
-        cant_corr_cobrado=payments.joins(:payments=>:tickets).where("tickets.status=0 and payments.fecha_de_corte=? and tickets.updated_at>=?",@corte, @corte).count
-        imp_corr_cobrado =payments.joins(:payments=>:tickets).where("tickets.status=0 and payments.fecha_de_corte=? and tickets.updated_at>=?",@corte,@corte).sum(:cantidad)
-
-        #cant_atras_cobrado=payments.joins(:payments=>:tickets).where("tickets.status=0 and payments.fecha_de_corte=? and tickets.updated_at>=payments.fecha_de_pago+12", @corte).count
-
-        #imp_atras_cobrado=payments.joins(:payments=>:tickets).where("tickets.status=0 and payments.fecha_de_corte=? and tickets.updated_at>=payments.fecha_de_pago+12",@corte).sum(:importe)
-      
-        #cant_venc_cobrado =payments.joins(:payments=>:tickets).where("tickets.status=0 and payments.fecha_de_corte=? and payments.interes>0", @corte).count
-
-        #imp_venc_cobrado =payments.joins(:payments=>:tickets).where("tickets.status=0 and payments.fecha_de_corte=? and payments.interes>0",@corte).sum(:importe)
-
         return [
                 sucursal,
                 nombre,
