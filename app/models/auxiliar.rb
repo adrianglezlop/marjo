@@ -49,7 +49,8 @@ class Auxiliar < ActiveRecord::Base
             return "desconocido"
         end
     end
-     def self.mes(val)
+    
+    def self.mes(val)
         case val
         when 1
             cad = "Enero"
@@ -161,7 +162,7 @@ class Auxiliar < ActiveRecord::Base
       #end
     end
     
-     def self.generador_de_tuplas_tablero(credit,fecha)
+    def self.generador_de_tuplas_tablero(credit,fecha)
         payment  = Payment.all.where("credit_id = ? and fecha_de_corte = ?", credit.id, fecha)[0]
         fila = Hash.new()
         fila["nombre_completo"] = "#{credit.nombre_completo_deudor}"
@@ -211,7 +212,7 @@ class Auxiliar < ActiveRecord::Base
      return tabla
     end
     
-     def self.tablero_por_creditos(credits,fecha)
+    def self.tablero_por_creditos(credits,fecha)
       tabla = []
       credits.each do |credit|
         tabla << self.generador_de_tuplas_tablero(credit,fecha)
