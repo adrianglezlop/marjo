@@ -78,33 +78,13 @@ class Product < ActiveRecord::Base
      end
      
      def modificar_seguimientos(fechainput)
-          creditos = self.credits.where("status=1").order(:apellido_paterno)
+          creditos = self.credits.where("status=1 or status=3").order(:apellido_paterno)
           if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
                tuplas.each do |t|
                     s=Seguimiento.where("credit_id= ? and fecha_corte= ?", t["credit_id"], fechainput).first
                     s.cobrado = t["cobrado"].to_f
                     s.save()
-                    #seguimiento.modif.update(t["credit_id"],t["cobrado"], fechainput)
-                    #nombre:t["nombre_completo"], 
-                    #fecha_prestamo:t["fecha"], 
-                    #capital:t["monto_solicitud"], 
-                    #monto_a_cobrar:t["monto_a_pagar"],
-                    #adeudo:t["adeudo"], 
-                    #a_pagar:t["pagar"], 
-                    #atrasado:t["atrasado"], 
-                    #interés_moratorio:t["interes_moratorio"], 
-                    #total_a_cobrar:t["total_a_cobrar"], 
-                    #cobrado=t["cobrado"], 
-                    #diferencia=t["diferencia"],
-                    #adelantado=t["adelantado"] 
-                    #empresa:t["empresa"],
-                    #no_pago:t["numero_de_pago"], 
-                    #no_creditos:t["numero_de_creditos"],
-                    #payment_id:t["payment_ref"],
-                    #credit_id:t["credit_id"],
-                    #fecha_corte:t["fecha_corte"]
-                    #)
                end
           end
      end
