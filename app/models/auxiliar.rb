@@ -313,32 +313,32 @@ class Auxiliar < ActiveRecord::Base
 
 
         fila = Hash.new()
-        fila["nombre_completo"] = "#{credit.nombre_completo_deudor}"
+        #fila["nombre_completo"] = "#{credit.nombre_completo_deudor}"
         fila["fecha"] = credit.fecha_de_contrato
         fila["monto_solicitud"] = credit.monto_solicitud
         fila["monto_a_pagar"] = credit.payments.sum(:importe)
         fila["pagado"] = Ticket.joins(:payment=>:credit).where("credits.id = ? and tickets.status = ?",credit.id,0).sum(:cantidad)
         fila["adeudo"] = fila["monto_a_pagar"].to_s.to_d - fila["pagado"].to_s.to_d
         fila["pagar"] = seguimiento.a_pagar
-        #pagos = Payment.all.where("credit_id = ? and fecha_de_corte < ?", credit.id, fecha)
-        #pagos = Payment.all.where("credit_id = ? and fecha_de_corte < ? updated_at", credit.id, fecha,fecha)
-        #fila["atrasado"] = seguimiento.atrasado
-        #fila["interes_moratorio"] = seguimiento.interés_moratorio
-        #fila["total_a_cobrar"] =  seguimiento.total_a_cobrar
-        #quitar =  (credit.id == 982 and fecha == "13/10/2018".to_date)? 20: 0
-        #fila["adelantado"] = Ticket.joins(:payment=>:credit).where("credits.id = ? and payments.fecha_de_corte > ? and tickets.status = ? and tickets.updated_at > ?",credit.id, fecha, 0, fecha).sum(:cantidad) - quitar
-        ##fila["cobrado"] = Payment.joins(:tickets).where("credit_id = ? and fecha_de_corte = ? and tickets.status = 0 and tickets.created_at >= ? ", credit.id, fecha,fecha).sum(:cantidad)
-        #fila["cobrado"] = Ticket.where(updated_at:credit.product.rangoDeCorte(fecha)).joins(:payment=>:credit).where("tickets.status = ?",0).where("payments.credit_id = ?",credit.id).sum("tickets.cantidad") - fila["adelantado"]
-        #fila["diferencia"] = fila["total_a_cobrar"].to_s.to_d - fila["cobrado"].to_s.to_d
+        pagos = Payment.all.where("credit_id = ? and fecha_de_corte < ?", credit.id, fecha)
+        pagos = Payment.all.where("credit_id = ? and fecha_de_corte < ? updated_at", credit.id, fecha,fecha)
+        fila["atrasado"] = seguimiento.atrasado
+        fila["interes_moratorio"] = seguimiento.interés_moratorio
+        fila["total_a_cobrar"] =  seguimiento.total_a_cobrar
+        quitar =  (credit.id == 982 and fecha == "13/10/2018".to_date)? 20: 0
+        fila["adelantado"] = Ticket.joins(:payment=>:credit).where("credits.id = ? and payments.fecha_de_corte > ? and tickets.status = ? and tickets.updated_at > ?",credit.id, fecha, 0, fecha).sum(:cantidad) - quitar
+        #fila["cobrado"] = Payment.joins(:tickets).where("credit_id = ? and fecha_de_corte = ? and tickets.status = 0 and tickets.created_at >= ? ", credit.id, fecha,fecha).sum(:cantidad)
+        fila["cobrado"] = Ticket.where(updated_at:credit.product.rangoDeCorte(fecha)).joins(:payment=>:credit).where("tickets.status = ?",0).where("payments.credit_id = ?",credit.id).sum("tickets.cantidad") - fila["adelantado"]
+        fila["diferencia"] = fila["total_a_cobrar"].to_s.to_d - fila["cobrado"].to_s.to_d
        
         #fila["empresa"] = credit.padre.nombre_completo
-        #fila["numero_de_pago"] = seguimiento.no_pago
-        #fila["numero_de_creditos"] = seguimiento.no_creditos
-        #fila["tipo"] = 2
-        ##fila["payment_ref"] = payment.id
-        #fila["credit_id"] = credit.id 
-        #fila["fecha_corte"] = fecha
-        #fila["estatus"] = Payment.select(:estatus)
+        fila["numero_de_pago"] = seguimiento.no_pago
+        fila["numero_de_creditos"] = seguimiento.no_creditos
+        fila["tipo"] = 2
+        #fila["payment_ref"] = payment.id
+        fila["credit_id"] = credit.id 
+        fila["fecha_corte"] = fecha
+        fila["estatus"] = Payment.select(:estatus)
         tabla << fila
   
      return tabla
