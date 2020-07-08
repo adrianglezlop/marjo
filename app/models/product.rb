@@ -79,7 +79,7 @@ class Product < ActiveRecord::Base
      
       def modificar_seguimientos(fechainput)
           #creditos = self.credits.where("status=1 or status=3").order(:apellido_paterno)
-          credito = self.credits.find(3039).first
+          credito = self.credits.find(3039)
           if Auxiliar.seguimiento_guardado_contador(credito,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
                tuplas.each do |t|
