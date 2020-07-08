@@ -308,18 +308,8 @@ class Auxiliar < ActiveRecord::Base
      return tabla
     end
     
-    def self.tablero_por_creditos_guardados(credits,fecha)
+    def self.seguimiento_por_creditos_guardados_individual(credit,fecha)
       tabla = []
-      credits.each do |credit|
-        tablero  = Tablero.all.where("credit_id = ? and fecha_corte = ?", credit.id, fecha.to_date)[0]
-        if tablero.nil?
-          next if credit.status == 3
-          tabla << self.generador_de_tuplas_tablero(credit,fecha)
-          next
-        end
-
-
-       
 
 
         fila = Hash.new()
@@ -350,9 +340,9 @@ class Auxiliar < ActiveRecord::Base
         fila["fecha_corte"] = fecha
         fila["estatus"] = Payment.select(:estatus)
         tabla << fila
-      end
+  
      return tabla
-    end
+  end
     
     def self.vencimientos
         Expire.create(comentarios:"vencimiento",fecha:Time.now.to_date,afectados:0) 
