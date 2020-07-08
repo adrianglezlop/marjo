@@ -229,12 +229,10 @@ class Auxiliar < ActiveRecord::Base
       return count
     end
     
-    def self.tablero_guardado_contador(credits,fecha)
+    def self.seguimiento_guardado_contador_individual(credit,fecha)
       count = 0
-      credits.each do |credit|
-        tablero = Tablero.all.where("credit_id = ? and fecha_corte = ?", credit.id, fecha.to_date)[0]
-        count += 1 unless tablero.nil?
-      end
+        seguimiento = Seguimiento.all.where("credit_id = ? and fecha_corte = ?", credit.id, fecha.to_date)[0]
+        count += 1 unless seguimiento.nil?
       return count
     end
     

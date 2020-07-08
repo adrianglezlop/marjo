@@ -80,7 +80,7 @@ class Product < ActiveRecord::Base
       def modificar_seguimientos(fechainput)
           #creditos = self.credits.where("status=1 or status=3").order(:apellido_paterno)
           credito = self.credits.find(3039)
-          if Auxiliar.seguimiento_guardado_contador(credito,fechainput) > 0
+          if Auxiliar.seguimiento_guardado_contador_individual(credito,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
   
                     s=Seguimiento.where("credit_id= ? and fecha_corte= ?", tuplas["credit_id"], fechainput).first
@@ -88,7 +88,6 @@ class Product < ActiveRecord::Base
                     s.diferencia = tuplas["total_a_cobrar"].to_f - tuplas["cobrado"].to_f
                     s.adelantado = tuplas["adelantado"].to_f
                     s.save()
- 
           end
      end
      
