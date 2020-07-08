@@ -314,7 +314,7 @@ class Auxiliar < ActiveRecord::Base
 
         fila = Hash.new()
         fila["nombre_completo"] = "#{credit.nombre_completo_deudor}"
-        fila["fecha"] = credit.fecha_de_contrato
+        #fila["fecha"] = credit.fecha_de_contrato
         #fila["monto_solicitud"] = credit.monto_solicitud
         #fila["monto_a_pagar"] = credit.payments.sum(:importe)
         #fila["pagado"] = Ticket.joins(:payment=>:credit).where("credits.id = ? and tickets.status = ?",credit.id,0).sum(:cantidad)
