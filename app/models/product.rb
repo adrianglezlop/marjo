@@ -82,13 +82,13 @@ class Product < ActiveRecord::Base
           credito = self.credits.find(3039)
           if Auxiliar.seguimiento_guardado_contador(credito,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
-               tuplas.each do |t|
-                    s=Seguimiento.where("credit_id= ? and fecha_corte= ?", t["credit_id"], fechainput).first
-                    s.cobrado = t["cobrado"].to_f
-                    s.diferencia = t["total_a_cobrar"].to_f - t["cobrado"].to_f
-                    s.adelantado = t["adelantado"].to_f
+  
+                    s=Seguimiento.where("credit_id= ? and fecha_corte= ?", tuplas["credit_id"], fechainput).first
+                    s.cobrado = tuplas["cobrado"].to_f
+                    s.diferencia = tuplas["total_a_cobrar"].to_f - tuplas["cobrado"].to_f
+                    s.adelantado = tuplas["adelantado"].to_f
                     s.save()
-               end
+ 
           end
      end
      
