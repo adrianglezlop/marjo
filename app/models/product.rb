@@ -77,18 +77,23 @@ class Product < ActiveRecord::Base
           return (ultima ... proxima)
      end
      
-     def modificar_seguimientos(fechainput)
+      def modificar_seguimientos(fechainput)
           #creditos = self.credits.where("status=1 or status=3").order(:apellido_paterno)
-          creditos = self.credits.where("credit_id=3039").order(:apellido_paterno)
-          if Auxiliar.seguimiento_guardado_contador(creditos,fechainput) > 0
+          credito = self.credits.find(3039).first
+          if Auxiliar.seguimiento_guardado_contador(credito,fechainput) > 0
                tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
                tuplas.each do |t|
                     s=Seguimiento.where("credit_id= ? and fecha_corte= ?", t["credit_id"], fechainput).first
                     s.cobrado = t["cobrado"].to_f
+                    s.diferencia = t["total_a_cobrar"].to_f - t["cobrado"].to_f
+                    s.adelantado = t["adelantado"].to_f
                     s.save()
                end
           end
      end
+     
+     
+     
      
      def almacenar_seguimientos(fechainput)
           creditos = self.credits.where(status=1).order(:apellido_paterno)
