@@ -81,7 +81,7 @@ class Product < ActiveRecord::Base
           #creditos = self.credits.where("status=1 or status=3").order(:apellido_paterno)
           credito = self.credits.find(3039)
           if Auxiliar.seguimiento_guardado_contador_individual(credito,fechainput) > 0
-               tuplas = Auxiliar.seguimiento_por_creditos_guardados(creditos,fechainput)
+               tuplas = Auxiliar.seguimiento_por_creditos_guardados(credito,fechainput)
   
                     s=Seguimiento.where("credit_id= ? and fecha_corte= ?", tuplas["credit_id"], fechainput).first
                     s.cobrado = tuplas["cobrado"].to_f
