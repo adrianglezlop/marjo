@@ -20,7 +20,7 @@ class ReciboPdf < Prawn::Document
       rectangle [50,750+des], 500, 190
       
       
-      image "#{Rails.root}/app/assets/images/logofundacion.jpg", width: 135, height: 25, :at => [70,740+des]
+      image "#{Rails.root}/app/assets/images/logofundacion.jpg", width: 135, height: 40, :at => [70,740+des]
       draw_text  "FOLIO:  2503616176B#{"0"*(5-ticket.id.to_s.length)+ticket.id.to_s}",:size=>9, :at => [420,720+des]
       draw_text  "FECHA DE CARGO: #{ticket.payment.fecha_de_pago}" ,:size=>9, :at => [420,705+des]
       draw_text  "FUNDACION: #{ticket.payment.credit.padre.branch_office.nombre}",:size=>9, :at => [420,690+des]
