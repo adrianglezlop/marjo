@@ -16,12 +16,12 @@ class CorridaPdf < Prawn::Document
    monto_a_pagar= @credit.monto_solicitud*(1+(@credit.taza_ord/100))
     #image "#{Rails.root}/app/assets/images/logo marjo.png", width: 155, height: 45
     text "#{@credit.nombre_completo_deudor}"
-    table([["FECHA DEL BENEFICIO DE DESARROLLO SOCIAL", @credit.fecha_de_contrato.strftime("%d/%m/%Y")], 
-          ["MONTO DEL BENEFICIO DE DESARROLLO SOCIAL",Dinero.to_money(@credit.monto_solicitud)], 
+    table([["FECHA DEL APOYO DE DESARROLLO SOCIAL", @credit.fecha_de_contrato.strftime("%d/%m/%Y")], 
+          ["MONTO DEL APOYO DE DESARROLLO SOCIAL",Dinero.to_money(@credit.monto_solicitud)], 
           ["MONTO A PAGAR", Dinero.to_money(monto_a_pagar)], 
           ["PAGO FIJO", Dinero.to_money(monto_a_pagar/@credit.product.numero_de_pagos_a_realizar)], 
           #["TASA INTERES","#{'%.2f' % @credit.product.taza_de_interes_ordinaria}%"], 
-          ["BENEFICIO DE LA FUNDACIÓN","#{'%.2f' % @credit.taza_ord}%"], 
+          ["BENEFICIO DE DESARROLLO SOCIAL","#{'%.2f' % @credit.taza_ord}%"], 
           ["PLAZO "," #{@credit.product.numero_de_pagos_a_realizar} #{@credit.product.etiqueta_plural}"],  
           ["PERIODICIDAD", @credit.product.payout.periocidad] 
           ],:cell_style => { size: 8 })

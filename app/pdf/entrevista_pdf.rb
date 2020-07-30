@@ -10,7 +10,7 @@ class EntrevistaPdf < Prawn::Document
       text "
       ENTREVISTA DEL BENEFICIARIO 
       ",:size => 10, :align => :center, :style  => :bold
-      text "Fundación :#{@credit.padre.branch_office.nombre} Promotor de Beneficio : #{@credit.padre.nombre_completo}
+      text "Fundación :#{@credit.padre.branch_office.nombre} Promotor de Apoyo : #{@credit.padre.nombre_completo}
       ",:size => 10
       text "R.F.C. : #{@credit.customer.RFC} CURP : #{@credit.customer.CURP} INE/IFE : #{@credit.customer.INE}
       ",:size => 10
