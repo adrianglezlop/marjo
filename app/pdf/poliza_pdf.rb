@@ -9,7 +9,7 @@ class PolizaPdf < Prawn::Document
     des = 0
     draw_text  "FUNDACIÓN VALOR A.C.",:size=>9, :at => [70,720+des]
     draw_text  "#{Conf.last.domicilio}",:size=>9, :at => [70,710+des]
-    draw_text  "COYOACÁN, CIUDAD DE MÉXICO, C.P. 04100",:size=>9, :at => [70,700+des]
+    #draw_text  "COYOACÁN, CIUDAD DE MÉXICO, C.P. 04100",:size=>9, :at => [70,700+des]
     draw_text  "#{Conf.last.RFC}",:size=>9, :at => [70,690+des]
     draw_text  "FUNDACIÓN: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
     
@@ -43,7 +43,7 @@ class PolizaPdf < Prawn::Document
     
     draw_text  "FUNDACIÓN VALOR A.C.",:size=>9, :at => [70,720+des]
     draw_text  "#{Conf.last.domicilio}",:size=>9, :at => [70,710+des]
-    draw_text  "COYOACÁN, CIUDAD DE MÉXICO, C.P. 04100",:size=>9, :at => [70,700+des]
+    #draw_text  "COYOACÁN, CIUDAD DE MÉXICO, C.P. 04100",:size=>9, :at => [70,700+des]
     draw_text  "#{Conf.last.RFC}",:size=>9, :at => [70,690+des]
     draw_text  "FUNDACIÓN: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
     
