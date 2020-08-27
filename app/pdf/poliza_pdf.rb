@@ -7,9 +7,9 @@ class PolizaPdf < Prawn::Document
   def text_content
     rectangle [50,750], 500, 250
     des = 0
-    draw_text  "FUNDACIÓN LOPEZ PADILLA SOBERANES A.C.",:size=>9, :at => [70,720+des]
+    draw_text  "FUNDACIÓN VALOR A.C.",:size=>9, :at => [70,720+des]
     draw_text  "#{Conf.last.domicilio}",:size=>9, :at => [70,710+des]
-    draw_text  "CULIACAN DE ROSALES, SINALOA C.P. 80128",:size=>9, :at => [70,700+des]
+    draw_text  "COYOACÁN, CDMX C.P. 04100",:size=>9, :at => [70,700+des]
     draw_text  "#{Conf.last.RFC}",:size=>9, :at => [70,690+des]
     draw_text  "FUNDACIÓN: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
     
@@ -41,9 +41,9 @@ class PolizaPdf < Prawn::Document
     
     des = -400 
     
-    draw_text  "FUNDACIÓN LOPEZ PADILLA SOBERANES A.C.",:size=>9, :at => [70,720+des]
+    draw_text  "FUNDACIÓN VALOR A.C.",:size=>9, :at => [70,720+des]
     draw_text  "#{Conf.last.domicilio}",:size=>9, :at => [70,710+des]
-    draw_text  "CULIACAN DE ROSALES, SINALOA C.P. 80128",:size=>9, :at => [70,700+des]
+    draw_text  "COYOACÁN, CDMX C.P. 04100",:size=>9, :at => [70,700+des]
     draw_text  "#{Conf.last.RFC}",:size=>9, :at => [70,690+des]
     draw_text  "FUNDACIÓN: #{@credit.padre.branch_office.nombre}",:size=>9, :at => [70,680+des]
     
